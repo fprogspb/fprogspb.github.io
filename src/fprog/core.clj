@@ -74,10 +74,12 @@
         :transparent "transparent"
         :blue "#42A3EE"}})
 
+(def config {:routes #'routes
+             :styles #'styles
+             :layout #'layout})
 
 (comment
-  (def stop (es/start {:routes #'routes
-                       :styles #'styles
-                       :layout #'layout}))
+  (def stop (es/start config))
+  (es/generate config)
   (stop))
 
